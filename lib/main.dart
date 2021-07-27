@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final List<Transaction> transaction = [
+  final List<Transaction> transactions = [
     Transaction(
       id: 't1',
       title: 'New Shoes',
@@ -41,8 +41,7 @@ class MyHomePage extends StatelessWidget {
           title: Text('Expenses Control'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Card(
               color: Colors.blue,
@@ -52,9 +51,12 @@ class MyHomePage extends StatelessWidget {
                 child: Text('Chart!'),
               ),
             ),
-            Card(
-              color: Colors.red,
-              child: Text('List of TX!'),
+            Column(
+              children: transactions.map((tx) {
+                return Card(
+                  child: Text(tx.title),
+                );
+              }).toList(),
             ),
           ],
         ),
