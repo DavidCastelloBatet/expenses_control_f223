@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Expenses Control',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -24,8 +22,20 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Expenses Control'),
       ),
-      body: Center(
-        child: Text('Widget Playground!'),
+      body: Column(
+        children: [
+          Card(
+            color: Colors.blue,
+            elevation: 5,
+            child: Container(
+              width: double.infinity,
+              child: Text('Chart!'),
+            ),
+          ),
+          Card(
+            child: Text('List of TX!'),
+          ),
+        ],
       ),
     );
   }
