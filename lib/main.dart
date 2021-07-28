@@ -34,6 +34,9 @@ class MyHomePage extends StatelessWidget {
     ),
   ];
 
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -53,7 +56,7 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             Card(
-              color: Colors.red[100],
+              color: Colors.purple[100],
               elevation: 5,
               child: Padding(
                 padding: EdgeInsets.all(10),
@@ -62,9 +65,11 @@ class MyHomePage extends StatelessWidget {
                   children: <Widget>[
                     TextField(
                       decoration: InputDecoration(labelText: 'Title'),
+                      controller: titleController,
                     ),
                     TextField(
                       decoration: InputDecoration(labelText: 'Amount'),
+                      controller: amountController,
                     ),
                     // ignore: deprecated_member_use
                     FlatButton(
