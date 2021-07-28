@@ -52,6 +52,30 @@ class MyHomePage extends StatelessWidget {
                 child: Text('Chart!'),
               ),
             ),
+            Card(
+              color: Colors.red[100],
+              elevation: 5,
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Title'),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Amount'),
+                    ),
+                    // ignore: deprecated_member_use
+                    FlatButton(
+                      onPressed: () {},
+                      child: Text('Add Transaction'),
+                      textColor: Colors.purple,
+                    ),
+                  ],
+                ),
+              ),
+            ),
             Column(
               children: transactions.map((tx) {
                 return Card(
